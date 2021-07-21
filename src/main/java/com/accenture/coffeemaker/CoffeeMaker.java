@@ -1,4 +1,4 @@
-package com.accenture.coffeemaker.model;
+package com.accenture.coffeemaker;
 
 public class CoffeeMaker {
 
@@ -14,19 +14,13 @@ public class CoffeeMaker {
 
     public String makeACoffee() {
         Integer coffeeAmount = beanTray.getCoffeeAmount();
-        if (beanTray.isAvailable() ==) {
-
-        }
-        if (serveTray.isAvailable() ==){
-
-        }
-        coffeeAmount--;
-        return display.displayMessage();
+        coffeeAmount = coffeeAmount - 1;
+        return display.displayMessage("Your coffee is ready. You can make " + beanTray.getCoffeeAmount() + " more cups with this amount.");
 
     }
 
     public String fillBeanTray() {
-        beanTray.setCoffeeAmount(beanTray.getCoffeeAmount() + 10);
-        return "The amount of coffee in the coffeemaker is enough for + " + beanTray.getCoffeeAmount();
+        beanTray.setCoffeeAmount(10);
+        return "The amount in the coffeemaker is enough for " + beanTray.getCoffeeAmount() + " cups of coffee now.";
     }
 }

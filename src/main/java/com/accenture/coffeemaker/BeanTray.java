@@ -1,4 +1,4 @@
-package com.accenture.coffeemaker.model;
+package com.accenture.coffeemaker;
 
 public class BeanTray extends CoffeeAccessory {
 
@@ -16,7 +16,10 @@ public class BeanTray extends CoffeeAccessory {
         this.coffeeAmount = coffeeAmount;
     }
 
-    public String isAvailable() {
-        return "Your bean tray is empty.";
+    public boolean isAvailable() {
+        if (coffeeAmount > 0){
+            return true;
+        }
+        return false;
     }
 }

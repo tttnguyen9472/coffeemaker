@@ -1,7 +1,5 @@
 package com.accenture.coffeemaker;
 
-import com.accenture.coffeemaker.model.CoffeeMaker;
-
 import java.util.Scanner;
 
 public class Main {
