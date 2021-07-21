@@ -16,14 +16,20 @@ public class CoffeeMaker {
         try {
             beanTray.isAvailable();
             serveTray.isAvailable();
-            Integer coffeeAmount = beanTray.getCoffeeAmount();
-            beanTray.setCoffeeAmount(coffeeAmount - 1);
+            reduceCoffeeAmount();
             display.displayMessage("Your coffee is ready. You can make " + beanTray.getCoffeeAmount() + " more cups with this amount.");
+            serveTray.takeACup();
         } catch (EmptyBeanTrayException e){
             display.displayMessage("The bean tray is empty. Please fill the bean tray.");
         } catch (EmptyServeTrayException e){
             display.displayMessage("The serve tray is empty. Please put a cup there.");
+            serveTray.putACup();
         }
+    }
+
+    private void reduceCoffeeAmount() {
+        Integer coffeeAmount = beanTray.getCoffeeAmount();
+        beanTray.setCoffeeAmount(coffeeAmount - 1);
     }
 
     public void fillBeanTray() {
