@@ -35,9 +35,9 @@ public class Main {
         while (true) {
             int input = readInput();
             if (input == 1) {
-                System.out.println(coffeeMaker.makeACoffee());
+                coffeeMaker.makeACoffee();
             } else if (input == 2) {
-                System.out.println(coffeeMaker.fillBeanTray());
+                coffeeMaker.fillBeanTray();
             } else if (input == 3) {
                 break;
             } else {

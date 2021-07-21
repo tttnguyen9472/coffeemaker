@@ -2,11 +2,10 @@ package com.accenture.coffeemaker;
 
 public class Display extends CoffeeAccessory {
 
-    public boolean isAvailable() {
-        return false;
+    public void isAvailable() {
     }
 
-    public String displayMessage(String message){
-        return message;
+    public void displayMessage(String message){
+        System.out.println(message);
     }
 }

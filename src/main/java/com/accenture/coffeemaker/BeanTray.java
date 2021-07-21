@@ -16,10 +16,10 @@ public class BeanTray extends CoffeeAccessory {
         this.coffeeAmount = coffeeAmount;
     }
 
-    public boolean isAvailable() {
+    public void isAvailable() throws EmptyBeanTrayException {
         if (coffeeAmount > 0){
-            return true;
+            return;
         }
-        return false;
+        throw new EmptyBeanTrayException("The bean tray is empty.");
     }
 }

@@ -1,25 +1,19 @@
 package com.accenture.coffeemaker;
 
+import java.util.Random;
+
 public class ServeTray extends CoffeeAccessory {
 
-    private boolean hasACup = false;
-
-    public boolean getHasACup() {
-        return hasACup;
-    }
-
-    public void setHasACup(boolean hasACup) {
-        this.hasACup = hasACup;
-    }
-
-    public boolean isAvailable() {
-        if (!hasACup){
-            return false;
+    public void isAvailable() throws EmptyServeTrayException {
+        int randomNum = getRandomNumber();
+        if (randomNum <= 3){
+            return;
         }
-        return true;
+        throw new EmptyServeTrayException("The serve tray is empty.");
     }
 
-    public void putACup(){
-        this.hasACup = true;
+    private int getRandomNumber() {
+        Random random = new Random();
+        return random.nextInt(5 - 1) + 1;
     }
 }
